@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class Crud extends Controller
 {
     public function inicio (){
-        $titulo = 'Home';
-        return view('inicio', compact('titulo','animales'));
+        $titulo = 'Inicio';
+        return view('inicio', compact('titulo'));
     }
 }
