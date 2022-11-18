@@ -7,8 +7,9 @@
                     <div class="card-body">
                         <h5 class="card-title">Registrar Personas</h5>
                         <p class="card-text">
-                            <form action="{{ route('store-persona') }}" method="POST">
+                            <form action="{{ route('update-persona', ['id'=>$id]) }}" method="POST">
                                 @csrf
+                                @method('PUT')
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <div class="form-floating">

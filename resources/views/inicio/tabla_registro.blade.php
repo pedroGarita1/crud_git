@@ -25,6 +25,13 @@
             <td>{{ $item->genero }}</td>
             <td>{{ $item->descripcion }}</td>
             <td><a class="btn btn-primary" href="{{ route('editar-registro', ['id'=>$item->id]) }}"><i class="fa-solid fa-user-pen"></i></a></td>
+            <td>
+                <form action="{{ route('eliminar-persona', ['id'=>$item->id]) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger"><i class="fa-solid fa-user-minus"></i></button>
+                </form>
+            </td>
         </tr>
         @endforeach
     </tbody>

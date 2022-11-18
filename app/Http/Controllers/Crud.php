@@ -32,4 +32,20 @@ class Crud extends Controller
         $persona = TPersona::find($id);
         return view('editar', compact('titulo','persona','id'));
     }
+    public function update(Request $request, $id){
+        $persona = TPersona::find($id);
+        $persona->nombre = $request->nombre;
+        $persona->paterno = $request->paterno;
+        $persona->materno = $request->materno;
+        $persona->fecha_nacimiento = $request->fecha_nacimiento;
+        $persona->genero = $request->tipo_sexo;
+        $persona->descripcion = $request->descripcion;
+        $persona->save();
+        return redirect()->route('vista-inicio');
+    }
+    public function destroy ($id){
+        $persona = TPersona::find($id);
+        $persona->delete();
+        return redirect()->route('vista-inicio');
+    }
 }
